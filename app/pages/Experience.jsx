@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import './styles.css'; // คุณต้องเพิ่มไฟล์ CSS นี้
   
-function Project() {
+function Experience() {
   const projects = [
     { name: 'E-commerce Website', description: 'Built with Vue.js and Laravel', details: 'An online store with full e-commerce functionality like product management, cart system, and payment integration.' },
     { name: 'Task Management App', description: 'Developed using Nuxt.js and NestJS', details: 'A task management app that allows users to create, manage, and track their tasks in an easy-to-use interface.' },
@@ -19,7 +19,7 @@ function Project() {
 
   return (
     <section className="p-6">
-       <h2 className="text-4xl font-bold text-center mb-6 text-blue-600">Project</h2>
+       <h2 className="text-4xl font-bold text-center mb-6 text-blue-600">Experience</h2>
     
       <div className="mt-4 space-y-4">
         {projects.map((project, index) => (
@@ -44,4 +44,4 @@ function Project() {
   );
 }
 
-export default Project;
+export default Experience;

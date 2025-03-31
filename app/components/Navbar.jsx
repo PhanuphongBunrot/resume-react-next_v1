@@ -8,7 +8,10 @@ const Navbar = () => {
   const tabs = [
       { id: "profile", text: "Profile" }, // เพิ่ม Profile
     { id: "skills", text: "Skills" },
-    { id: "projects", text: "Projects" },
+    { id: "projects", text: "Project" },
+    { id: "experience", text: "Experience" },
+    { id: "contact", text: "Contact" },
+  
   ];
 
   return (
