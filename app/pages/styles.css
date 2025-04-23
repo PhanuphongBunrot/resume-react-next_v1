@@ -2,7 +2,7 @@
     perspective: 1000px; /* ให้มุมมอง 3D */
     cursor: pointer;
     width: 500px;  /* กำหนดขนาดแน่นอนให้การ์ด */
-    height: 150px;
+    height: 300px;
   }
   
   .card-inner {
@@ -41,5 +41,11 @@
     background-color: #f7f7f7;
     transform: rotateY(180deg);
     z-index: 1;  /* ทำให้ card-back อยู่ด้านหลัง */
+  }
+  @media (max-width: 640px) {
+    .project-card {
+      width: 100%;
+      height: auto;
+    }
   }
   
