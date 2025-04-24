@@ -6,10 +6,10 @@ const Navbar = () => {
   const [activeTab, setActiveTab] = useState("profile");
 
   const tabs = [
-      { id: "profile", text: "Profile" }, // เพิ่ม Profile
+      { id: "profile", text: "Profile" }, 
     { id: "skills", text: "Skills" },
-    { id: "projects", text: "Project" },
     { id: "experience", text: "Experience" },
+    { id: "projects", text: "Project" },
     { id: "contact", text: "Contact" },
   
   ];

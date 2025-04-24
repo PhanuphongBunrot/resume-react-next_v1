@@ -1,14 +1,36 @@
 "use client";
 
-
 import React, { useState } from 'react';
-import './styles.css'; // คุณต้องเพิ่มไฟล์ CSS นี้
-  
+
+
 function Project() {
   const projects = [
-    { name: 'E-commerce Website', description: 'Built with Vue.js and Laravel', details: 'An online store with full e-commerce functionality like product management, cart system, and payment integration.' },
-    { name: 'Task Management App', description: 'Developed using Nuxt.js and NestJS', details: 'A task management app that allows users to create, manage, and track their tasks in an easy-to-use interface.' },
-    { name: 'Portfolio Website', description: 'Created using React and Tailwind CSS', details: 'A personal portfolio showcasing projects and skills with a clean and responsive design.' },
+
+    { name: '', 
+      details: 'Contributed to the development of a web-based controller for monitoring routers at various checkpoints, utilizing Laravel for the backend, MongoDB for data storage, and Vue.js for the frontend interface.' ,
+      image: '/logos/modern.jpeg'
+    },
+    { name: '', 
+      details: 'Contributed to web application development by resolving bugs and implementing new features using CodeIgniter for both backend and frontend, with SQL Server as the database system.' ,
+      image: '/logos/wex-1.png'
+    },
+    { name: 'Task Management App', 
+      details: 'Contributed to the development of a web application by debugging issues and adding new functionalities, utilizing Laravel for both backend and frontend, and SQL Server as the database.',
+     image: '/logos/wex-2.png'
+    },
+    { name: 'Task Management App', 
+      details: 'Contributed to web application development by resolving bugs and implementing new features, utilizing NestJS for the backend, Nuxt.js for the frontend, and SQL Server as the database system.',
+     image: '/logos/wex-3.png'
+    },
+   
+    { name: 'Portfolio Website',  
+      details: 'Planned and implemented the web architecture and data modeling using Laravel for both backend and frontend development, with MySQL as the database system.' ,
+      image: '/logos/expup-2.png'
+    },
+    { name: 'Portfolio Website',  
+      details: 'Planned and structured the web architecture and database design using Next.js for both backend and frontend development, and MySQL as the relational database.' ,
+      image: '/logos/expup-3.png'
+    },
   ];
 
   const [flipped, setFlipped] = useState(null);
@@ -18,22 +40,22 @@ function Project() {
   };
 
   return (
-    <section className="p-6">
-       <h2 className="text-4xl font-bold text-center mb-6 text-blue-600">Project</h2>
-    
-      <div className="mt-4 space-y-4">
-        {projects.map((project, index) => (
+    <section className="p-9">
+      <h2 className="text-4xl font-bold text-center mb-6 text-blue-600">Project</h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-6">
+      {projects.map((project, index) => (
           <div
             key={index}
-            className={`project-card ${flipped === index ? 'flipped' : ''}`}
+            className={`project-card project-card-size ${flipped === index ? 'flipped' : ''}`}
             onClick={() => toggleFlip(index)}
           >
-            <div className="card-inner">
-              <div className="card-front p-4 border rounded-lg shadow-lg">
-                <h3 className="text-xl font-semibold">{project.name}</h3>
+            <div className="project-card-inner">
+              <div className="project-card-front">
+              <img src={project.image} alt={project.name}  className="w-full h-full object-cover rounded-md"/>
                 <p className="text-gray-600">{project.description}</p>
               </div>
-              <div className="card-back p-4 border rounded-lg shadow-lg">
+              <div className="project-card-back">
                 <p className="text-gray-800">{project.details}</p>
               </div>
             </div>

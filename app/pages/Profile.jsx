@@ -10,11 +10,11 @@ function Profile() {
         </div>
         <h2 className="text-3xl font-bold text-blue-600">Profile</h2>
         <p className="text-lg mt-2 text-gray-700 max-w-md">
-          Hello! I'm a Full Stack Developer with experience in Vue, Nuxt, PHP, and Node.js.
+          Hello!  My name is Mr. Pahnuphong Bunrot.
         </p>
       </div>
     </section>
-  );
+  );   
 }
 
 export default Profile;

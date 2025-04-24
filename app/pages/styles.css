@@ -1,10 +1,18 @@
 .project-card {
     perspective: 1000px; /* ให้มุมมอง 3D */
     cursor: pointer;
-    width: 500px;  /* กำหนดขนาดแน่นอนให้การ์ด */
-    height: 300px;
+    width: 700px;  /* กำหนดขนาดแน่นอนให้การ์ด */
+    height: 500px;
   }
-  
+
+
+  .project-card-a {
+    perspective: 1000px; /* ให้มุมมอง 3D */
+    cursor: pointer;
+    width: 80px;  /* กำหนดขนาดแน่นอนให้การ์ด */
+    height: 50px;
+  }
+
   .card-inner {
     position: relative;
     width: 100%;
@@ -41,11 +49,88 @@
     background-color: #f7f7f7;
     transform: rotateY(180deg);
     z-index: 1;  /* ทำให้ card-back อยู่ด้านหลัง */
+    text-align: left !important;
   }
+
+
+  
   @media (max-width: 640px) {
     .project-card {
       width: 100%;
       height: auto;
     }
+  }
+  .project-horizontal-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+  }
+  
+
+  .project-horizontal-scroll::-webkit-scrollbar {
+    display: none; /* ซ่อน scrollbar บน Chrome/Safari */
+  }
+  .project-card {
+    flex: 0 0 auto; /* ไม่ให้หด, ไม่ขยาย */
+    perspective: 1000px;
+    cursor: pointer;
+    scroll-snap-align: start;
+  }
+  
+  .project-card-size {
+    width: 800px;
+    height: 400px;
+    
+  }
+  
+  .project-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .project-card.flipped .project-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .project-card-front, .project-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .project-card-front {
+    background-color: white;
+    z-index: 2;
+    overflow: hidden;
+  }
+  
+  .project-card-back {
+    background-color: #f7f7f7;
+    transform: rotateY(180deg);
+    z-index: 1;
+    text-align: left !important;
+    
+  }
+
+  .project-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* ครอบภาพเต็มโดยไม่เสียอัตราส่วน */
+    display: block;
+    border-radius: 10px;
   }
   
